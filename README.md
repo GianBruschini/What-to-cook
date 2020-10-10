@@ -8,9 +8,10 @@ Proyecto indie, desarrollado en Android Studio 4.0, con el lenguaje Java. Trata 
 - Gradle version 6.1.1
 - SDK 29
 
-# Apis usadas
+# Integracion
 
 - Uso de una API de recetas de cocinas llamada **Edamam**
+-Uso de **Retrofit**, cliente que simplifica la llamada de servicios REST
 
 
 # Capturas de la aplicacion
