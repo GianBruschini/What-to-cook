@@ -6,7 +6,7 @@ Proyecto indie, desarrollado en Android Studio 4.0, con el lenguaje Java. Trata 
 
 - Android Studio 4.0
 - Gradle version 6.1.1
--     SDK 29
+- SDK 29
 
 # Apis usadas
 
