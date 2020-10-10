@@ -11,7 +11,7 @@ Proyecto indie, desarrollado en Android Studio 4.0, con el lenguaje Java. Trata 
 # Integracion
 
 - Uso de una API de recetas de cocinas llamada **Edamam**
--Uso de **Retrofit**, cliente que simplifica la llamada de servicios REST
+- Uso de **Retrofit**, cliente que simplifica la llamada de servicios REST
 
 
 # Capturas de la aplicacion
