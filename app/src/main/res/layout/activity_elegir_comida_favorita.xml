@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgfood"
+    android:orientation="vertical"
+    tools:context="WhatToCook.Model.ElegirComidaFavoritaActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/grandstander_semibold"
+            android:layout_marginTop="170dp"
+            android:layout_marginRight="-80dp"
+            android:layout_marginLeft="70dp"
+            android:text="What to cook"
+            android:textColor="#F44336"
+            android:textSize="35sp">
+
+        </TextView>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="-80dp"
+        android:fontFamily="@font/dmsansregular"
+        android:padding="18dp"
+        android:text="Cual es tu comida favorita?"
+        android:textColor="#2F3032"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/comidaInput"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@drawable/btn"
+        android:layout_marginLeft="160dp"
+        android:fontFamily="@font/dmsansregular"
+        android:hint="Comida"
+        android:elevation="5dp"
+        android:inputType="text"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="#000000"
+        android:textColorHint="#9FA3AC"
+        android:textSize="14sp"
+        />
+
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:background="@drawable/registrarsebtn"
+        android:fontFamily="@font/grandstander_semibold"
+        android:onClick="continuar"
+        android:layout_marginEnd="-80dp"
+        android:text="Continuar"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#EAE1E1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        />
+</LinearLayout>

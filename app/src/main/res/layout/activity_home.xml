@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+    <!--   android:background="#121921"  -->
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:background="@drawable/fondo">
+
+
+        <TextView
+            android:id="@+id/textoWhatToCook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-80dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/grandstander_semibold"
+            android:layout_centerHorizontal="true"
+            android:text="What to cook"
+            android:textColor="#F1F1FF"
+            android:textSize="30sp">
+        </TextView>
+        <EditText
+            android:id="@+id/receipeSearchInfo"
+            android:layout_width="324dp"
+            android:layout_height="47dp"
+            android:background="@drawable/btn"
+            android:drawableStart="@drawable/ic_search"
+            android:drawableLeft="@drawable/ic_search"
+            android:drawablePadding="12dp"
+            android:elevation="5dp"
+            android:ems="10"
+            android:imeOptions="actionSearch"
+            android:hint="Busca una receta"
+            android:fontFamily="@font/dmsansregular"
+            android:inputType="text"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#9FA3AC"
+            android:textSize="14sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="130dp"
+
+            />
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recetas de su gusto:"
+                android:textColor="#22222B"
+                android:textSize="17sp"
+                android:fontFamily="@font/dmsansbold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                >
+
+            </TextView>
+
+            <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+                android:id="@+id/first_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                app:msrv_gravity="start"
+                app:msrv_ms_per_inch="100"
+                app:msrv_snap_count="1" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recetas para el desayuno:"
+                android:textColor="#22222B"
+                android:textSize="17sp"
+                android:fontFamily="@font/dmsansbold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="18dp"
+                android:paddingTop="14dp"
+                android:layout_marginBottom="10dp"
+                >
+
+            </TextView>
+
+            <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+                android:id="@+id/second_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                app:msrv_gravity="center"
+                app:msrv_ms_per_inch="120"
+                app:msrv_snap_count="2" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recetas para el almuerzo:"
+                android:textColor="#22222B"
+                android:textSize="17sp"
+                android:fontFamily="@font/dmsansbold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="18dp"
+                android:paddingTop="14dp"
+                android:layout_marginBottom="10dp"
+                >
+
+            </TextView>
+
+            <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+                android:id="@+id/third_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                app:msrv_gravity="center"
+                app:msrv_ms_per_inch="120"
+                app:msrv_snap_count="2" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recetas para la merienda:"
+                android:textColor="#22222B"
+                android:textSize="17sp"
+                android:fontFamily="@font/dmsansbold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="18dp"
+                android:paddingTop="14dp"
+                android:layout_marginBottom="10dp"
+                >
+
+            </TextView>
+
+            <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+                android:id="@+id/fourth_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                app:msrv_gravity="center"
+                app:msrv_ms_per_inch="120"
+                app:msrv_snap_count="2" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recetas para la cena:"
+                android:textColor="#22222B"
+                android:textSize="17sp"
+                android:fontFamily="@font/dmsansbold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="18dp"
+                android:paddingTop="14dp"
+                android:layout_marginBottom="10dp"
+                >
+
+            </TextView>
+
+            <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+                android:id="@+id/fifth_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp"
+                app:msrv_gravity="center"
+                app:msrv_ms_per_inch="120"
+                app:msrv_snap_count="2" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_menu"
+        app:itemIconTint="@color/nav_color"
+        app:menu="@menu/bottom_navigation"
+        />
+
+
+
+
+</LinearLayout>

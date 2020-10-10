@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="horizontal"
+        android:background="@drawable/fondo">
+
+
+        <TextView
+            android:id="@+id/textoWhatToCook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/grandstander_semibold"
+            android:layout_centerHorizontal="true"
+            android:text="What to cook"
+            android:textColor="#F1F1FF"
+            android:textSize="30sp">
+        </TextView>
+
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+        <EditText
+            android:id="@+id/editTextTextIngrediente"
+            android:layout_width="319dp"
+            android:layout_height="38dp"
+            android:background="@drawable/btn"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="26dp"
+            android:paddingLeft="10dp"
+            android:elevation="10dp"
+            android:ems="10"
+            android:hint="Agregue un ingrediente..."
+            android:inputType="textEmailAddress"
+            android:textColor="#000000"
+            android:textColorHint="#9FA3AC"
+            android:textSize="14sp"
+            />
+
+
+        <ImageButton
+            android:id="@+id/addReceipe"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginBottom="60dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="9dp"
+            android:elevation="10dp"
+            android:background="@drawable/round_button"
+            android:onClick="AgregarIngrediente"
+            android:layout_toRightOf="@id/editTextTextIngrediente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_add_roundbutton" />
+
+        <Button
+            android:id="@+id/buscarRecetas"
+            android:layout_width="217dp"
+            android:layout_height="36dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/registrarsebtn"
+            android:fontFamily="@font/grandstander_semibold"
+            android:onClick="buscarRecetas"
+            android:text="Buscar recetas"
+            android:textColor="#EAE1E1"
+            android:textSize="12sp"
+            android:elevation="6dp"/>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_ingredientes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_menu"
+        app:itemIconTint="@color/nav_color"
+        app:menu="@menu/bottom_navigation"
+        />
+
+
+</LinearLayout>
