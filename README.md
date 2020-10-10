@@ -10,4 +10,4 @@ Proyecto indie, desarrollado en Android Studio 4.0, con el lenguaje Java. Trata 
 
 # Apis usadas
 
-- Uso de una API de recetas de cocinas llamada Edamam
+- Uso de una API de recetas de cocinas llamada **Edamam**
