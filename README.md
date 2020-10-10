@@ -17,3 +17,4 @@ Proyecto indie, desarrollado en Android Studio 4.0, con el lenguaje Java. Trata 
 
 - **Link de la primer captura:** https://imagizer.imageshack.com/img923/2686/1aGqQI.jpg
 - **Link de la segunda captura:** https://imagizer.imageshack.com/img924/139/rKFNdD.jpg
+- **Link de la tercer captura:** https://imagizer.imageshack.com/img923/9871/EPgTfw.jpg
