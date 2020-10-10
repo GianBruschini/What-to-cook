@@ -11,3 +11,9 @@ Proyecto indie, desarrollado en Android Studio 4.0, con el lenguaje Java. Trata 
 # Apis usadas
 
 - Uso de una API de recetas de cocinas llamada **Edamam**
+
+
+# Capturas de la aplicacion
+
+- **Link de la primer captura:** https://imagizer.imageshack.com/img923/2686/1aGqQI.jpg
+- **Link de la segunda captura:** https://imagizer.imageshack.com/img924/139/rKFNdD.jpg
