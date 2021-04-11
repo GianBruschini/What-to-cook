@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="ld_activityScreenTitles">
+        <item>Home</item>
+        <item>Likes</item>
+        <item>Mensajes</item>
+        <item>Mi perfil</item>
+        <item>Publicar animal</item>
+        <item>Configuración</item>
+        <item />
+        <item>Cerrar sesión</item>
+
+    </string-array>
+
+    <array name="ld_activityScreenIcons">
+        <item>@drawable/ic_home</item>
+        <item>@drawable/ic_favorite</item>
+        <item>@drawable/ic_favorite</item>
+        <item>@drawable/ic_favorite</item>
+        <item>@drawable/ic_favorite</item>
+        <item>@drawable/ic_favorite</item>
+        <item>0</item>
+        <item>@drawable/ic_favorite</item>
+
+
+    </array>
+
+</resources>

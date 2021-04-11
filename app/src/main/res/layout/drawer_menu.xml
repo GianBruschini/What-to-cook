@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#416c6e"
+    android:id="@+id/linear">
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        >
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/nombrePerfilDrawer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+
+
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="85dp">
+
+    </Space>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/drawer_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="30dp">
+
+    </Space>
+
+</LinearLayout>

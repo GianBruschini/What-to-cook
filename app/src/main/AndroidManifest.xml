@@ -3,6 +3,7 @@
     package="com.example.getcooked">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,27 +13,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="WhatToCook.Model.ElegirComidaFavoritaActivity">
+        <activity android:name="WhatToCook.Model.HomeActivity2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity android:name="WhatToCook.Model.ElegirComidaFavoritaActivity"></activity>
         <activity
             android:name="WhatToCook.Model.RecetasDetalle"
             android:screenOrientation="portrait" />
         <activity
             android:name="WhatToCook.Model.RecetasInfoActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="WhatToCook.Model.BuscarRecetas"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustPan">
-
-
-        </activity>
+            android:windowSoftInputMode="stateHidden|adjustPan"></activity>
         <activity
             android:name="WhatToCook.Model.CrearUsuarioActivity"
             android:screenOrientation="portrait" />
@@ -43,15 +41,18 @@
             android:name="WhatToCook.Model.HomeActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="WhatToCook.Model.RegistrarseActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="WhatToCook.Model.LoginActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

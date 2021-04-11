@@ -1,6 +1,7 @@
 package WhatToCook.Model;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,11 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.getcooked.R;
 
+import java.io.IOException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -69,26 +74,12 @@ public class AdapterMenu extends RecyclerView.Adapter<AdapterMenu.myViewHolder> 
                 .fitCenter()
                 .centerInside()
                 .into(holder.background_image);
-
-            System.out.println("Titulo es : " + " " + title);
-
-        /*Image image = ImageIO.read(new URL(url1));
-        if(image != null){
-            System.out.println("IMAGE");
-        }else{
-            System.out.println("NOT IMAGE");
-        }
-
-         */
-
     }
-
 
 
     public int getItemCount() {
         return mData.size();
     }
-
 
     public class myViewHolder extends  RecyclerView.ViewHolder{
         ImageView background_image;

@@ -30,6 +30,14 @@
             android:textColor="#F1F1FF"
             android:textSize="30sp">
         </TextView>
+
+        <ImageView
+            android:id="@+id/imagenTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+        </ImageView>
         <EditText
             android:id="@+id/receipeSearchInfo"
             android:layout_width="324dp"

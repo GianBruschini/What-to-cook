@@ -61,7 +61,7 @@ public class RecuperarCuentaActivity extends AppCompatActivity {
 
         emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Recuperacion de constraseña de What to cook");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "asd");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "WhatToCook.asd");
         startActivity(Intent.createChooser(emailIntent, "Send mail..."));
         finish();
         */

@@ -7,6 +7,7 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.getcooked.R;
@@ -14,10 +15,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 import com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import WhatToCook.Interfaces.RecetasApi;
 import androidx.annotation.NonNull;
@@ -46,6 +49,7 @@ public class HomeActivity extends AppCompatActivity implements AdapterMenu.OnIte
     private List<item> mlistLunch = new ArrayList<>();
     private List<item> mlistSnackTime = new ArrayList<>();
     private List<item> mlistDinner = new ArrayList<>();
+    private ImageView imagenTest;
 
 
 
@@ -67,12 +71,9 @@ public class HomeActivity extends AppCompatActivity implements AdapterMenu.OnIte
         }
 
 
-
-
-
-
-
         capturarTextoSearch();
+
+        imagenTest = findViewById(R.id.imagenTest);
 
 
         loading = new LoadingDialog(this);
@@ -121,7 +122,6 @@ public class HomeActivity extends AppCompatActivity implements AdapterMenu.OnIte
 
 
 
-
     private void getFavoritesRecipes() {
 
 
@@ -136,16 +136,24 @@ public class HomeActivity extends AppCompatActivity implements AdapterMenu.OnIte
         call.enqueue(new Callback<Receta>() {
             @Override
             public void onResponse(Call<Receta> call, Response<Receta> response) {
-
-
                 if(response.isSuccessful()){
+
+
                     Receta r = response.body();
                     ArrayList<Receipe> recetas =r.getHits();
                     for(int i = 0; i<recetas.size(); i++){
                         Receipe rec = recetas.get(i);
-                        mlistComidaFav.add(new item(rec.getRecipe().getImage(),rec.getRecipe().getLabel(),
-                                rec.getRecipe().getCalories() ,
-                                rec.getRecipe().getUrl(),rec.getRecipe().getIngredientLines()));
+                        Picasso.get().load(rec.getRecipe().getUrl()).into(imagenTest);
+
+                        mlistComidaFav.add
+                                    (new item
+                                            (rec.getRecipe().getImage(),
+                                                    rec.getRecipe().getLabel(),
+                                                    rec.getRecipe().getCalories() ,
+                                                    rec.getRecipe().getUrl(),
+                                                    rec.getRecipe().getIngredientLines()));
+
+
 
                     }
 
