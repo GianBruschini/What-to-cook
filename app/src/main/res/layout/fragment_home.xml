@@ -3,8 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#FFFFFF"
+    android:background="#F9F9F9"
     android:layout_marginTop="20dp">
+
+
+
 
 
 
@@ -17,8 +20,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="40dp"
-            android:layout_centerHorizontal="true">
+            android:layout_marginStart="40dp"
+            >
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_desayuno"
@@ -31,6 +34,7 @@
                 >
 
                 <ImageView
+                    android:id="@+id/breakfast_picture"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/desayuno_icono"
@@ -71,6 +75,7 @@
                 >
 
                 <ImageView
+                    android:id="@+id/lunch_picture"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/almuerzo_icono"
@@ -110,6 +115,7 @@
                 >
 
                 <ImageView
+                    android:id="@+id/snackTime_picture"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/merienda_icono"
@@ -149,6 +155,7 @@
                 >
 
                 <ImageView
+                    android:id="@+id/dinner_picture"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/cena_icono"

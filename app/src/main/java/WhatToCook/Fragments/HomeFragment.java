@@ -1,39 +1,30 @@
 package WhatToCook.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.getcooked.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import WhatToCook.Interfaces.RecetasApi;
-import WhatToCook.Model.AdapterMenu;
 import WhatToCook.Model.Comida_detail_cardViewHome;
-import WhatToCook.Model.HomeActivity;
 import WhatToCook.Model.HomeAdapter;
 import WhatToCook.Model.Receipe;
 import WhatToCook.Model.Receta;
-import WhatToCook.Model.item;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -41,28 +32,41 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class HomeFragment extends Fragment implements HomeAdapter.OnItemClickListener     {
+public class HomeFragment extends Fragment implements HomeAdapter.OnItemClickListener,View.OnClickListener     {
     View v;
     RecyclerView recyclerView;
     private HomeAdapter adapter;
-    private List<Comida_detail_cardViewHome> mlistBreakfast = new ArrayList<>();
-    private List<item> mlistLunch = new ArrayList<>();
-    private List<item> mlistSnackTime = new ArrayList<>();
-    private List<item> mlistDinner = new ArrayList<>();
-    private CardView card;
+    private List<Comida_detail_cardViewHome> mListFood = new ArrayList<>();
+    private ImageView lunchPicture;
+    private ImageView breakfastPicture;
+    private ImageView snackTimePicture;
+    private ImageView dinnerPicture;
+    private ToggleButton favouriteButtom;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v= inflater.inflate(R.layout.fragment_home,container,false);
-        getBreakfastReceipes();
+        getValues();
         return v;
+
+    }
+
+    private void getValues() {
+        lunchPicture = v.findViewById(R.id.lunch_picture);
+        breakfastPicture = v.findViewById(R.id.breakfast_picture);
+        snackTimePicture = v.findViewById(R.id.snackTime_picture);
+        dinnerPicture = v.findViewById(R.id.dinner_picture);
+        breakfastPicture.setOnClickListener(this);
+        lunchPicture.setOnClickListener(this);
+        snackTimePicture.setOnClickListener(this);
+        dinnerPicture.setOnClickListener(this);
+
+
     }
 
 
-
-
-    private void getBreakfastReceipes() {
+    private void setRecyclerViewWithBreakfastFood() {
 
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -71,7 +75,9 @@ public class HomeFragment extends Fragment implements HomeAdapter.OnItemClickLis
                 .build();
 
         RecetasApi recipeService = retrofit.create(RecetasApi.class);
-        Call<Receta> call = recipeService.getRecipeByBreakfast("Desayuno",20,"breakfast");
+        Call<Receta> call = recipeService.getRecipeByBreakfast("https://api.edamam.com/"+"search"+"?"+"q"+"="+"breakfast"
+                +"&"+"app_id"+"="+"25d5c2a6"+"&"+"app_key"+"="+"41b4d59bd6ed74ebf43f69c96b5f1761"+"&"+"mealType"+"="
+                +"breakfast"+"&"+"to"+"="+"20");
 
         call.enqueue(new Callback<Receta>() {
             @Override
@@ -82,7 +88,7 @@ public class HomeFragment extends Fragment implements HomeAdapter.OnItemClickLis
                     ArrayList<Receipe> recetas =r.getHits();
                     for(int i = 0; i<recetas.size(); i++){
                         Receipe rec = recetas.get(i);
-                        mlistBreakfast.add(new Comida_detail_cardViewHome(rec.getRecipe().getLabel(),rec.getRecipe().getImage(),String.valueOf(rec.getRecipe().getCalories())));
+                        mListFood.add(new Comida_detail_cardViewHome(rec.getRecipe().getLabel(),rec.getRecipe().getImage(),String.valueOf(rec.getRecipe().getCalories())));
                     }
 
                 }
@@ -103,7 +109,7 @@ public class HomeFragment extends Fragment implements HomeAdapter.OnItemClickLis
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         recyclerView = v.findViewById(R.id.recycler_view);
-        adapter = new HomeAdapter(getActivity(),mlistBreakfast);
+        adapter = new HomeAdapter(getActivity(), mListFood);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),1,GridLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setHasFixedSize(true);
@@ -113,9 +119,163 @@ public class HomeFragment extends Fragment implements HomeAdapter.OnItemClickLis
 
     }
 
-
     @Override
     public void onitemClick(int position) {
 
+    }
+
+
+    public void clear() {
+        int size = mListFood.size();
+        if (size > 0) {
+            for (int i = 0; i < size; i++) {
+                mListFood.remove(0);
+            }
+
+            recyclerView.getAdapter().notifyItemRangeRemoved(0, size);
+        }
+    }
+
+
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId()){
+
+            case R.id.breakfast_picture:
+                clear();
+                setRecyclerViewWithBreakfastFood();
+                recyclerView.getAdapter().notifyDataSetChanged();
+                break;
+
+            case R.id.lunch_picture:
+                clear();
+                setRecyclerViewWithLunchFood();
+                recyclerView.getAdapter().notifyDataSetChanged();
+                break;
+
+            case R.id.snackTime_picture:
+                clear();
+                setRecyclerViewWithSnackTimeFood();
+                recyclerView.getAdapter().notifyDataSetChanged();
+                break;
+
+            case R.id.dinner_picture:
+                clear();
+                setRecyclerViewWithDinnerTimeFood();
+                recyclerView.getAdapter().notifyDataSetChanged();
+                break;
+
+        }
+
+
+
+
+    }
+
+    private void setRecyclerViewWithDinnerTimeFood() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://api.edamam.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        RecetasApi recipeService = retrofit.create(RecetasApi.class);
+        Call<Receta> call = recipeService.getRecipeByBreakfast("https://api.edamam.com/"+"search"+"?"+"q"+"="+"dinner"
+                +"&"+"app_id"+"="+"25d5c2a6"+"&"+"app_key"+"="+"41b4d59bd6ed74ebf43f69c96b5f1761"+"&"+"mealType"+"="
+                +"dinner"+"&"+"to"+"="+"20");
+
+        call.enqueue(new Callback<Receta>() {
+            @Override
+            public void onResponse(Call<Receta> call, Response<Receta> response) {
+
+                if(response.isSuccessful()){
+                    Receta r = response.body();
+                    ArrayList<Receipe> recetas =r.getHits();
+                    for(int i = 0; i<recetas.size(); i++){
+                        Receipe rec = recetas.get(i);
+                        mListFood.add(new Comida_detail_cardViewHome(rec.getRecipe().getLabel(),rec.getRecipe().getImage(),String.valueOf(rec.getRecipe().getCalories())));
+
+                    }
+
+                    recyclerView.getAdapter().notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Receta> call, Throwable t) {
+                System.out.println(t.getMessage());
+            }
+        });
+    }
+
+    private void setRecyclerViewWithSnackTimeFood() {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://api.edamam.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        RecetasApi recipeService = retrofit.create(RecetasApi.class);
+        Call<Receta> call = recipeService.getRecipeByBreakfast("https://api.edamam.com/"+"search"+"?"+"q"+"="+"snack"
+                +"&"+"app_id"+"="+"25d5c2a6"+"&"+"app_key"+"="+"41b4d59bd6ed74ebf43f69c96b5f1761"+"&"+"mealType"+"="
+                +"snack"+"&"+"to"+"="+"20");
+
+        call.enqueue(new Callback<Receta>() {
+            @Override
+            public void onResponse(Call<Receta> call, Response<Receta> response) {
+
+                if(response.isSuccessful()){
+                    Receta r = response.body();
+                    ArrayList<Receipe> recetas =r.getHits();
+                    for(int i = 0; i<recetas.size(); i++){
+                        Receipe rec = recetas.get(i);
+                        mListFood.add(new Comida_detail_cardViewHome(rec.getRecipe().getLabel(),rec.getRecipe().getImage(),String.valueOf(rec.getRecipe().getCalories())));
+
+                    }
+
+                    recyclerView.getAdapter().notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Receta> call, Throwable t) {
+                System.out.println(t.getMessage());
+            }
+        });
+    }
+
+    private void setRecyclerViewWithLunchFood() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://test-es.edamam.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        RecetasApi recipeService = retrofit.create(RecetasApi.class);
+        Call<Receta> call = recipeService.getRecipeByBreakfast("https://api.edamam.com/"+"search"+"?"+"q"+"="+"lunch"
+                +"&"+"app_id"+"="+"25d5c2a6"+"&"+"app_key"+"="+"41b4d59bd6ed74ebf43f69c96b5f1761"+"&"+"mealType"+"="
+                +"lunch"+"&"+"to"+"="+"20");
+
+        call.enqueue(new Callback<Receta>() {
+            @Override
+            public void onResponse(Call<Receta> call, Response<Receta> response) {
+
+                if(response.isSuccessful()){
+                    Receta r = response.body();
+                    ArrayList<Receipe> recetas =r.getHits();
+                    for(int i = 0; i<recetas.size(); i++){
+                        Receipe rec = recetas.get(i);
+                        mListFood.add(new Comida_detail_cardViewHome(rec.getRecipe().getLabel(),rec.getRecipe().getImage(),String.valueOf(rec.getRecipe().getCalories())));
+                    }
+
+                }
+                recyclerView.getAdapter().notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<Receta> call, Throwable t) {
+                Toast.makeText(getActivity(),"Error, vuelva a intentarlo pronto",Toast.LENGTH_LONG).show();
+
+            }
+        });
     }
 }

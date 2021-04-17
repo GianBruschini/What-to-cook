@@ -51,7 +51,7 @@ public class ElegirComidaFavoritaActivity extends AppCompatActivity {
     }
 
     private void verCodigoResponse() {
-        Retrofit retrofit = new Retrofit.Builder()
+        /*Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://test-es.edamam.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -87,6 +87,8 @@ public class ElegirComidaFavoritaActivity extends AppCompatActivity {
                 System.out.println(t.getMessage());
             }
         });
+
+         */
 
     }
 

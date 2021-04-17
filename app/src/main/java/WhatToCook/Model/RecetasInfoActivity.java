@@ -89,7 +89,7 @@ public class RecetasInfoActivity extends AppCompatActivity implements Adapter.On
     private void getRecipes(String s) {
 
 
-        Retrofit retrofit = new Retrofit.Builder()
+        /*Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://test-es.edamam.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -130,6 +130,8 @@ public class RecetasInfoActivity extends AppCompatActivity implements Adapter.On
                 System.out.println(t.getMessage());
             }
         });
+
+         */
 
 
     }

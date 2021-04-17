@@ -75,13 +75,23 @@
                 android:layout_marginStart="15dp"
                 android:layout_centerHorizontal="true"
                 android:padding="10dp"
-
-
                 >
             </TextView>
 
+            <ToggleButton
+                android:id="@+id/favourite_buttom"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:textOn=""
+                android:textOff=""
+                android:background="@drawable/favourite_icon_selector"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="140dp"
+                android:layout_marginBottom="10dp"
 
+                >
 
+            </ToggleButton>
 
 
 

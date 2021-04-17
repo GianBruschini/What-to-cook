@@ -60,16 +60,6 @@ public class HomeActivity extends AppCompatActivity implements AdapterMenu.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         settingNavigationView();
-        SharedPreferences prefs = getSharedPreferences("shared", MODE_PRIVATE);
-        prefs.edit().clear();
-        int number = prefs.getInt("number", 0);
-        if(number == 1){
-            comida = prefs.getString("comida", "No name defined" );
-
-        }else{
-            comida = getIntent().getStringExtra("comida");
-        }
-
 
         capturarTextoSearch();
 
@@ -126,19 +116,19 @@ public class HomeActivity extends AppCompatActivity implements AdapterMenu.OnIte
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://test-es.edamam.com/")
+                .baseUrl("https://api.edamam.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         RecetasApi recipeService = retrofit.create(RecetasApi.class);
-        Call<Receta> call = recipeService.getRecipe(comida,20);
+        Call<Receta> call = recipeService.getRecipe("https://api.edamam.com/"+"search"+"?"+"q"+"="+"desayuno"
+                +"&"+"app_id"+"="+"25d5c2a6"+"&"+"app_key"+"="+"41b4d59bd6ed74ebf43f69c96b5f1761"+"&"+"mealType"+"="
+                +"breakfast"+"&"+"to"+"="+"20");
 
         call.enqueue(new Callback<Receta>() {
             @Override
             public void onResponse(Call<Receta> call, Response<Receta> response) {
                 if(response.isSuccessful()){
-
-
                     Receta r = response.body();
                     ArrayList<Receipe> recetas =r.getHits();
                     for(int i = 0; i<recetas.size(); i++){
@@ -181,12 +171,14 @@ public class HomeActivity extends AppCompatActivity implements AdapterMenu.OnIte
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://test-es.edamam.com/")
+                .baseUrl("https://api.edamam.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         RecetasApi recipeService = retrofit.create(RecetasApi.class);
-        Call<Receta> call = recipeService.getRecipeByBreakfast("Desayuno",20,"breakfast");
+        Call<Receta> call = recipeService.getRecipeByBreakfast("https://api.edamam.com/"+
+        "app_id"+"="+"25d5c2a6"+"&"+"app_key"+"="+"41b4d59bd6ed74ebf43f69c96b5f1761"+"&"+"mealType"
+                +"="+"breakfast"+"&"+"to"+"="+"20");
 
         call.enqueue(new Callback<Receta>() {
             @Override
@@ -226,12 +218,13 @@ public class HomeActivity extends AppCompatActivity implements AdapterMenu.OnIte
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://test-es.edamam.com/")
+                .baseUrl("https://api.edamam.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         RecetasApi recipeService = retrofit.create(RecetasApi.class);
-        Call<Receta> call = recipeService.getRecipeByBreakfast("Almuerzo",20,"lunch");
+        Call<Receta> call = recipeService.getRecipeByBreakfast("https://api.edamam.com/"+"search"+"?"+"q"+"="+"pollo"
+                +"&"+"app_id"+"="+"25d5c2a6"+"&"+"app_key"+"="+"41b4d59bd6ed74ebf43f69c96b5f1761");
 
         call.enqueue(new Callback<Receta>() {
             @Override
@@ -272,12 +265,13 @@ public class HomeActivity extends AppCompatActivity implements AdapterMenu.OnIte
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://test-es.edamam.com/")
+                .baseUrl("https://api.edamam.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         RecetasApi recipeService = retrofit.create(RecetasApi.class);
-        Call<Receta> call = recipeService.getRecipeByBreakfast("Merienda",20,"snack");
+        Call<Receta> call = recipeService.getRecipeByBreakfast("https://api.edamam.com/"+"search"+"?"+"q"+"="+"pollo"
+                +"&"+"app_id"+"="+"25d5c2a6"+"&"+"app_key"+"="+"41b4d59bd6ed74ebf43f69c96b5f1761");
 
         call.enqueue(new Callback<Receta>() {
             @Override
@@ -318,12 +312,13 @@ public class HomeActivity extends AppCompatActivity implements AdapterMenu.OnIte
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://test-es.edamam.com/")
+                .baseUrl("https://api.edamam.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         RecetasApi recipeService = retrofit.create(RecetasApi.class);
-        Call<Receta> call = recipeService.getRecipeByBreakfast("Cena",20,"dinner");
+        Call<Receta> call = recipeService.getRecipeByBreakfast("https://api.edamam.com/"+"search"+"?"+"q"+"="+"pollo"
+                +"&"+"app_id"+"="+"25d5c2a6"+"&"+"app_key"+"="+"41b4d59bd6ed74ebf43f69c96b5f1761");
 
         call.enqueue(new Callback<Receta>() {
             @Override
