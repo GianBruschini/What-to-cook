@@ -1,11 +1,13 @@
 package WhatToCook.Fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -17,14 +19,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.getcooked.R;
 
+import org.joda.time.DateTime;
+import org.joda.time.LocalTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
+import java.lang.reflect.Array;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
+import java.util.TimeZone;
 
 import WhatToCook.Interfaces.RecetasApi;
 import WhatToCook.Model.Comida_detail_cardViewHome;
 import WhatToCook.Model.HomeAdapter;
 import WhatToCook.Model.Receipe;
 import WhatToCook.Model.Receta;
+import WhatToCook.Model.RetrofitSingleton;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -42,17 +57,54 @@ public class HomeFragment extends Fragment implements HomeAdapter.OnItemClickLis
     private ImageView snackTimePicture;
     private ImageView dinnerPicture;
     private ToggleButton favouriteButtom;
+    private  static final RecetasApi recipeService = RetrofitSingleton.getService();;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v= inflater.inflate(R.layout.fragment_home,container,false);
         getValues();
+        insertDataAccordingHour();
         return v;
 
     }
 
+    @SuppressLint("SetTextI18n")
+    private void insertDataAccordingHour() {
+       Calendar c = Calendar.getInstance();
+       int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
+
+       if(timeOfDay >= 0 && timeOfDay < 12){
+
+           setRecyclerViewWithBreakfastFood();
+       }else{
+           if(timeOfDay>=12 && timeOfDay < 16){
+
+               setRecyclerViewWithLunchFood();
+           }else{
+                if(timeOfDay >= 16 && timeOfDay < 21){
+
+                    setRecyclerViewWithSnackTimeFood();
+                }else{
+                    if(timeOfDay >= 21 && timeOfDay < 24){
+                        setRecyclerViewWithDinnerTimeFood();
+                    }
+                }
+           }
+       }
+
+
+
+
+
+
+
+    }
+
+
+
     private void getValues() {
+
         lunchPicture = v.findViewById(R.id.lunch_picture);
         breakfastPicture = v.findViewById(R.id.breakfast_picture);
         snackTimePicture = v.findViewById(R.id.snackTime_picture);
@@ -68,13 +120,7 @@ public class HomeFragment extends Fragment implements HomeAdapter.OnItemClickLis
 
     private void setRecyclerViewWithBreakfastFood() {
 
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://test-es.edamam.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        RecetasApi recipeService = retrofit.create(RecetasApi.class);
+        
         Call<Receta> call = recipeService.getRecipeByBreakfast("https://api.edamam.com/"+"search"+"?"+"q"+"="+"breakfast"
                 +"&"+"app_id"+"="+"25d5c2a6"+"&"+"app_key"+"="+"41b4d59bd6ed74ebf43f69c96b5f1761"+"&"+"mealType"+"="
                 +"breakfast"+"&"+"to"+"="+"20");
@@ -174,12 +220,7 @@ public class HomeFragment extends Fragment implements HomeAdapter.OnItemClickLis
     }
 
     private void setRecyclerViewWithDinnerTimeFood() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.edamam.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        RecetasApi recipeService = retrofit.create(RecetasApi.class);
+            
         Call<Receta> call = recipeService.getRecipeByBreakfast("https://api.edamam.com/"+"search"+"?"+"q"+"="+"dinner"
                 +"&"+"app_id"+"="+"25d5c2a6"+"&"+"app_key"+"="+"41b4d59bd6ed74ebf43f69c96b5f1761"+"&"+"mealType"+"="
                 +"dinner"+"&"+"to"+"="+"20");
@@ -210,12 +251,7 @@ public class HomeFragment extends Fragment implements HomeAdapter.OnItemClickLis
 
     private void setRecyclerViewWithSnackTimeFood() {
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.edamam.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
 
-        RecetasApi recipeService = retrofit.create(RecetasApi.class);
         Call<Receta> call = recipeService.getRecipeByBreakfast("https://api.edamam.com/"+"search"+"?"+"q"+"="+"snack"
                 +"&"+"app_id"+"="+"25d5c2a6"+"&"+"app_key"+"="+"41b4d59bd6ed74ebf43f69c96b5f1761"+"&"+"mealType"+"="
                 +"snack"+"&"+"to"+"="+"20");
@@ -245,12 +281,7 @@ public class HomeFragment extends Fragment implements HomeAdapter.OnItemClickLis
     }
 
     private void setRecyclerViewWithLunchFood() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://test-es.edamam.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
 
-        RecetasApi recipeService = retrofit.create(RecetasApi.class);
         Call<Receta> call = recipeService.getRecipeByBreakfast("https://api.edamam.com/"+"search"+"?"+"q"+"="+"lunch"
                 +"&"+"app_id"+"="+"25d5c2a6"+"&"+"app_key"+"="+"41b4d59bd6ed74ebf43f69c96b5f1761"+"&"+"mealType"+"="
                 +"lunch"+"&"+"to"+"="+"20");

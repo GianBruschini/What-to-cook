@@ -22,14 +22,14 @@
 
 
     <TextView
-        android:id="@+id/provincia"
+        android:id="@+id/textoBienvenida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/opensans_bold"
+        android:fontFamily="@font/arima_madurai_regular"
         android:paddingTop="28dp"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="90dp"
         android:text="Hola! \n¿Qué deseas?"
-        android:lineSpacingExtra="5dp"
+        android:lineSpacingExtra="1dp"
         android:textColor="#3a3a3a"
         android:textSize="25sp"
 

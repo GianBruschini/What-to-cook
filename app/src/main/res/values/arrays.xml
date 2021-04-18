@@ -3,25 +3,21 @@
 
     <string-array name="ld_activityScreenTitles">
         <item>Home</item>
-        <item>Likes</item>
-        <item>Mensajes</item>
-        <item>Mi perfil</item>
-        <item>Publicar animal</item>
-        <item>Configuración</item>
+        <item>Buscar recetas</item>
+        <item>Favoritos</item>
+        <item>información</item>
         <item />
-        <item>Cerrar sesión</item>
+        <item></item>
 
     </string-array>
 
     <array name="ld_activityScreenIcons">
         <item>@drawable/ic_home</item>
-        <item>@drawable/ic_favorite</item>
-        <item>@drawable/ic_favorite</item>
-        <item>@drawable/ic_favorite</item>
-        <item>@drawable/ic_favorite</item>
-        <item>@drawable/ic_favorite</item>
+        <item>@drawable/ic_search</item>
+        <item>@drawable/ic_add_to_favorite</item>
+        <item>@drawable/ic_baseline_info_24</item>
         <item>0</item>
-        <item>@drawable/ic_favorite</item>
+        <item></item>
 
 
     </array>

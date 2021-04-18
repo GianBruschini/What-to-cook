@@ -38,12 +38,10 @@ import WhatToCook.Fragments.HomeFragment;
 public class HomeActivity2 extends AppCompatActivity implements DrawerAdapter.OnItemSelectedListener {
     private AdapterView.OnItemSelectedListener listener;
     private static final int POS_HOME = 0;
-    private static final int POS_LIKES = 1;
-    private static final int POS_MESSAGES = 2;
-    private static final int POS_PERFIL= 3;
-    private static final int POS_AGREGAR= 4;
-    private static final int POS_SETTINGS = 5;
-    private static final int POS_LOGOUT = 7;
+    private static final int POS_FAVORITES = 1;
+    private static final int POS_SEARCH = 2;
+    private static final int POS_INFORMATION= 3;
+
 
     private String[] screenTitles;
     private Drawable[] screenIcons;
@@ -70,25 +68,15 @@ public class HomeActivity2 extends AppCompatActivity implements DrawerAdapter.On
 
 
 
-
-        /*View headerView = slidingRootNav.getHeaderView(0);
-        TextView navUsername = (TextView) headerView.findViewById(R.id.navUsername);
-        navUsername.setText("Your Text Here");
-
-         */
-
         screenIcons = loadScreenIcons();
         screenTitles = loadScreenTitles();
 
         DrawerAdapter adapter = new DrawerAdapter(Arrays.asList(
                 createItemFor(POS_HOME).setChecked(true),
-                createItemFor(POS_LIKES),
-                createItemFor(POS_MESSAGES),
-                createItemFor(POS_PERFIL),
-                createItemFor(POS_AGREGAR),
-                createItemFor(POS_SETTINGS),
-                new SpaceItem(90),
-                createItemFor(POS_LOGOUT)));
+                createItemFor(POS_SEARCH),
+                createItemFor(POS_FAVORITES),
+                createItemFor(POS_INFORMATION)));
+
         adapter.setListener(this);
 
         RecyclerView list = findViewById(R.id.drawer_list);
@@ -101,25 +89,12 @@ public class HomeActivity2 extends AppCompatActivity implements DrawerAdapter.On
 
 
 
-    /*private void showFragment(Fragment fragment) {
-        System.out.println("ENTRE 2");
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.frame_layout, fragment)
-                .commit();
-        System.out.println("ENTRE 3");
-    }
-
-     */
-
-
-
-
 
     @SuppressWarnings("rawtypes")
     private DrawerItem createItemFor(int position) {
         return new SimpleItem(screenIcons[position], screenTitles[position])
-                .withIconTint(color(R.color.grayText))
-                .withTextTint(color(R.color.grayText))
+                .withIconTint(color(R.color.border))
+                .withTextTint(color(R.color.colorPrimary))
                 .withSelectedIconTint(color(R.color.white))
                 .withSelectedTextTint(color(R.color.white));
     }
@@ -151,34 +126,11 @@ public class HomeActivity2 extends AppCompatActivity implements DrawerAdapter.On
     @Override
     public void onItemSelected(int position) {
         if (position == POS_HOME) {
-
             setFragment(new HomeFragment());
         }
 
-        if (position == POS_LIKES) {
-
-        }
-
-        if (position == POS_MESSAGES) {
-
-        }
-
-        if (position == POS_PERFIL) {
-
-        }
-
-        if (position == POS_AGREGAR) {
 
 
-        }
-
-        if (position == POS_SETTINGS) {
-
-        }
-
-        if (position == POS_LOGOUT) {
-
-        }
         slidingRootNav.closeMenu();
 
     }
