@@ -13,6 +13,7 @@ Project developed in Android Studio 4.0.1, with Java. It is about a system where
 
 # Screenshots of the app
 
-
+<p align="center">
 
 <img src="https://user-images.githubusercontent.com/59579790/117865844-c4a08b80-b26c-11eb-809b-d62524019f2d.png" width="200" height="400" />
+</p>
