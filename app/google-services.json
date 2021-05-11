@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:952913724997:android:3d0efae7a700d6b14b852c",
         "android_client_info": {
-          "package_name": "com.example.getcooked"
+          "package_name": "com.gian.getcooked"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "952913724997-g3c726dtgg81tl1f31jk8m5n939e809r.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.getcooked",
+            "package_name": "com.gian.getcooked",
             "certificate_hash": "0779005f38c86b1d1c31de8a2fe74ad414bc1cce"
           }
         },

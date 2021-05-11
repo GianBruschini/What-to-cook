@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="324dp"
+        android:layout_height="47dp"
+        android:background="@drawable/btn"
+        android:drawableStart="@drawable/ic_search"
+        android:drawableLeft="@drawable/ic_search"
+        android:drawablePadding="12dp"
+        android:elevation="5dp"
+        android:ems="10"
+        android:imeOptions="actionSearch"
+        android:hint="Search an ingredient"
+        android:fontFamily="@font/montserrat_semibold"
+        android:inputType="text"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="#000000"
+        android:textColorHint="#9FA3AC"
+        android:textSize="14sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+
+        />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleview_ingredients"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search"
+        android:layout_above="@id/buscarRecetasButton"
+        android:layout_marginTop="40dp"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buscarRecetasButton"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/registrarsebtn"
+        android:fontFamily="@font/montserrat_bold"
+        android:textAllCaps="false"
+        android:onClick="buscarRecetas"
+        android:text="@string/buscar_recetas"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:elevation="6dp"/>
+
+
+
+</RelativeLayout>

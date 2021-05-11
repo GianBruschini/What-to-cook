@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="gian.Model.HomeActivity2"
+    android:background="#F9F9F9">
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="28dp"
+        android:background="#F9F9F9"
+        >
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <TextView
+        android:id="@+id/textoBienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:paddingTop="28dp"
+        android:layout_marginStart="70dp"
+        android:text="Hi! \nWhat do you want?"
+        android:lineSpacingExtra="1dp"
+        android:textColor="#3a3a3a"
+        android:textSize="22sp"
+
+        />
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_marginTop="140dp"
+        android:layout_height="match_parent"
+        />
+
+</RelativeLayout>

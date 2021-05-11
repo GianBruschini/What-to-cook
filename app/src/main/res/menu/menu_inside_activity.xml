@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/nav_ingredients"
-        android:title="Ingredientes"
+    <item android:id="@+id/nav_home"
+        android:title="Home"
+        android:icon="@drawable/ic_home"
+        app:cnb_backgroundColor="#ff785b"
+        app:cnb_iconColor="#fff"
+        app:cnb_textColor="#fff"
         >
 
     </item>
 
-    <item android:id="@+id/nav_preparacion"
-        android:title="Preparacion"
+    <item android:id="@+id/nav_buscar"
+        android:title="Search"
+        android:icon="@drawable/ic_search"
+        app:cnb_backgroundColor="#ff785b"
+        app:cnb_iconColor="#fff"
+        app:cnb_textColor="#fff"
         >
 
     </item>
 
 
-    <item android:id="@+id/nav_nutrition"
-        android:title="Nutrientes"
+    <item android:id="@+id/nav_favourites"
+        android:title="Favourites"
+        android:icon="@drawable/ic_favorite"
+        app:cnb_backgroundColor="#ff785b"
+        app:cnb_iconColor="#fff"
+        app:cnb_textColor="#fff"
         >
 
     </item>

@@ -1,57 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.getcooked">
+    package="com.gian.getcooked">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_whattocooklogo"
+        android:icon="@mipmap/ic_launcher"
         android:label="What to cook"
-        android:roundIcon="@drawable/ic_whattocookcircular"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="WhatToCook.Model.HomeActivity2">
+
+        <activity android:name="gian.Model.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="WhatToCook.Model.ElegirComidaFavoritaActivity"></activity>
-        <activity
-            android:name="WhatToCook.Model.RecetasDetalle"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="WhatToCook.Model.RecetasInfoActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="WhatToCook.Model.BuscarRecetas"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustPan"></activity>
-        <activity
-            android:name="WhatToCook.Model.CrearUsuarioActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="WhatToCook.Model.RecuperarCuentaActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="WhatToCook.Model.HomeActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name="gian.Model.HomeRecetas">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        </activity> <!-- Oficial: ca-app-pub-4185358034958198~1851780676 -->
+        <!-- Prueba: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4185358034958198~1851780676" />
+
         <activity
-            android:name="WhatToCook.Model.RegistrarseActivity"
+            android:name="gian.Model.HomeActivity2"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="gian.Model.RecetasDetalle"
             android:screenOrientation="portrait" />
         <activity
-            android:name="WhatToCook.Model.LoginActivity"
+            android:name="gian.Model.RecetasInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gian.Model.BuscarRecetas"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="gian.Model.CrearUsuarioActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gian.Model.RecuperarCuentaActivity"
             android:screenOrientation="portrait" />
     </application>
 

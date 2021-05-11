@@ -3,9 +3,9 @@
 
     <string-array name="ld_activityScreenTitles">
         <item>Home</item>
-        <item>Buscar recetas</item>
-        <item>Favoritos</item>
-        <item>información</item>
+        <item>Search recipes</item>
+        <item>Favourites</item>
+        <item>Information</item>
         <item />
         <item></item>
 

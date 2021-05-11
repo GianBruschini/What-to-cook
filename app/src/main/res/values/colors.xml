@@ -6,4 +6,5 @@
     <color  name = "border">#000000</color>
     <color  name = "white">#FFFF</color>
     <color name="grayText">#729fa0</color>
+    <color name="orangeText">#FF5722</color>
 </resources>

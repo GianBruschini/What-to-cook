@@ -2,45 +2,29 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="WhatToCook.Model.HomeActivity2"
+    tools:context="gian.Model.HomeActivity2"
     android:background="#F9F9F9">
-
-
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="28dp"
-        android:background="#F9F9F9"
-        >
-
-    </androidx.appcompat.widget.Toolbar>
-
-
-    <TextView
-        android:id="@+id/textoBienvenida"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/arima_madurai_regular"
-        android:paddingTop="28dp"
-        android:layout_marginLeft="90dp"
-        android:text="Hola! \n¿Qué deseas?"
-        android:lineSpacingExtra="1dp"
-        android:textColor="#3a3a3a"
-        android:textSize="25sp"
-
-        />
 
 
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
-        android:layout_marginTop="140dp"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         />
+
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rounded"
+        app:cnb_menuResource="@menu/menu_inside_activity">
+
+    </com.ismaeldivita.chipnavigation.ChipNavigationBar>
+
+
+
 
 </RelativeLayout>

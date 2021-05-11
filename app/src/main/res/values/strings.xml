@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Get cooked</string>
+    <string name="agregue_un_ingrediente">Add an ingredient, recipe…</string>
+    <string name="buscar_recetas">Search recipes</string>
 </resources>

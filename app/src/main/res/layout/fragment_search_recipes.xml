@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/editTextIngrediente"
+        android:layout_centerHorizontal="true"
+        android:layout_width="319dp"
+        android:layout_height="38dp"
+        android:background="@drawable/btn"
+        android:layout_marginTop="40dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:elevation="10dp"
+        android:imeOptions="actionDone"
+        android:ems="10"
+        android:hint="@string/agregue_un_ingrediente"
+        android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textColorHint="#9FA3AC"
+        android:textSize="14sp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_ingredientes"
+        android:layout_width="match_parent"
+        android:layout_below="@id/editTextIngrediente"
+        android:layout_height="200dp"
+        android:layout_marginTop="80dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buscarRecetasButton"
+        android:layout_width="217dp"
+        android:layout_height="36dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/recyclerView_ingredientes"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/registrarsebtn"
+        android:fontFamily="@font/montserrat_light"
+        android:onClick="buscarRecetas"
+        android:text="@string/buscar_recetas"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:elevation="6dp"/>
+
+
+</RelativeLayout>
