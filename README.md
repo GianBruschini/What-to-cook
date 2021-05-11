@@ -14,7 +14,23 @@ Project developed in Android Studio 4.0.1, with Java. It is about a system where
 # Screenshots of the app
 
 <p align="center">
-
-<img src="https://user-images.githubusercontent.com/59579790/![screen_2](https://user-images.githubusercontent.com/59579790/117866893-0978f200-b26e-11eb-80f9-9b1fd1a85db0.png)
-117865844-c4a08b80-b26c-11eb-809b-d62524019f2d.png" width="200" height="400" />
+<img src="https://user-images.githubusercontent.com/59579790/117866985-257c9380-b26e-11eb-800c-9109f135351c.png" width="200" height="400" />
 </p>
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/59579790/117867028-31685580-b26e-11eb-9b09-a85677b36fe6.png" width="200" height="400" />
+</p>
+
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/59579790/117867050-388f6380-b26e-11eb-8b35-40105cd08130.png" width="200" height="400" />
+</p>
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/59579790/117867075-4218cb80-b26e-11eb-8ac2-21731883f336.png" width="200" height="400" />
+</p>
+
+
+
+
+
