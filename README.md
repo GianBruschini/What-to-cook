@@ -1,21 +1,20 @@
 # What-to-cook
-Proyecto  desarrollado en Android Studio 4.0, con el lenguaje Java. Trata de un sistema en donde el usuario podra consultar segun los ingredientes que tenga en el momento, variedades de comidas que se puedan preparar con aquellos ingredientes.
+Project developed in Android Studio 4.0.1, with Java. It is about a system where the user can search recipes for breakfast, lunch, or dinner, also the user can find recipes with the ingredients that he have at the moment. The API used to get recipe information, it's called "Spoonacular".
 
 
-# Caracteristicas del proyecto
+# Project features
 
-- Android Studio 4.0
+- Android Studio 4.0.1
 - Gradle version 6.1.1
 - SDK 29
-
-# Integracion
-
-- Uso de una API de recetas de cocinas llamada **Edamam**
-- Uso de **Retrofit**, cliente que simplifica la llamada de servicios REST
+- Recipe API called **Spoonacular**
+- **Retrofit**, client that simplify the called of rest services.
 
 
-# Capturas de la aplicacion
+# Screenshots of the app
 
-- **Link de la primer captura:** https://imagizer.imageshack.com/img923/2686/1aGqQI.jpg
-- **Link de la segunda captura:** https://imagizer.imageshack.com/img924/139/rKFNdD.jpg
-- **Link de la tercer captura:** https://imagizer.imageshack.com/img923/9871/EPgTfw.jpg
+![screen_1](https://user-images.githubusercontent.com/59579790/117865844-c4a08b80-b26c-11eb-809b-d62524019f2d.png)
+![screen_2](https://user-images.githubusercontent.com/59579790/117865859-c8341280-b26c-11eb-8f75-ca54c7d80ae9.png)
+![screen_3](https://user-images.githubusercontent.com/59579790/117865864-c9653f80-b26c-11eb-939a-8230aaa5dac9.png)
+![screen_4](https://user-images.githubusercontent.com/59579790/117865867-ca966c80-b26c-11eb-9e87-9eb3415c993d.png)
+
