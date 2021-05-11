@@ -15,5 +15,6 @@ Project developed in Android Studio 4.0.1, with Java. It is about a system where
 
 <p align="center">
 
-<img src="https://user-images.githubusercontent.com/59579790/117865844-c4a08b80-b26c-11eb-809b-d62524019f2d.png" width="200" height="400" />
+<img src="https://user-images.githubusercontent.com/59579790/![screen_2](https://user-images.githubusercontent.com/59579790/117866893-0978f200-b26e-11eb-80f9-9b1fd1a85db0.png)
+117865844-c4a08b80-b26c-11eb-809b-d62524019f2d.png" width="200" height="400" />
 </p>
