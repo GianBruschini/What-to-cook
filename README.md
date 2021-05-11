@@ -13,8 +13,6 @@ Project developed in Android Studio 4.0.1, with Java. It is about a system where
 
 # Screenshots of the app
 
-![screen_1](https://user-images.githubusercontent.com/59579790/117865844-c4a08b80-b26c-11eb-809b-d62524019f2d.png | width=100)
-![screen_2](https://user-images.githubusercontent.com/59579790/117865859-c8341280-b26c-11eb-8f75-ca54c7d80ae9.png | width=100)
-![screen_3](https://user-images.githubusercontent.com/59579790/117865864-c9653f80-b26c-11eb-939a-8230aaa5dac9.png | width=100)
-![screen_4](https://user-images.githubusercontent.com/59579790/117865867-ca966c80-b26c-11eb-9e87-9eb3415c993d.png | width=100)
 
+
+<img src="https://user-images.githubusercontent.com/59579790/117865844-c4a08b80-b26c-11eb-809b-d62524019f2d.png" width="200" height="400" />
