@@ -1,5 +1,5 @@
-# What-to-cook
-Project developed in Android Studio 4.0.1, with Java. It is about a system where the user can search recipes for breakfast, lunch, or dinner, also the user can find recipes with the ingredients that he have at the moment. The API used to get recipe information, it's called "Spoonacular".
+# What is this application about?
+What to cook is a project developed in Android Studio 4.0.1, with Java. It is about a system where the user can search recipes for breakfast, lunch, or dinner, also the user can find recipes with the ingredients that he have at the moment. The API used to get recipe information, it's called "Spoonacular".
 
 
 # Project features
