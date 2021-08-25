@@ -27,10 +27,10 @@
         <!-- Prueba: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-4185358034958198~1851780676" />
+            android:value="ca-app-pub-3940256099942544~3347511713" />
 
         <activity
-            android:name="gian.Model.HomeActivity2"
+            android:name="gian.activities.HomeActivity2"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name="gian.Model.RecetasDetalle"

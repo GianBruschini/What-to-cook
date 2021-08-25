@@ -39,7 +39,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import gian.Interfaces.SpoonacularApi;
-import gian.Model.HomeAdapter;
 import gian.Model.HomeAdapterSpoon;
 import gian.Model.LoadingDialog;
 import gian.Model.RecetasDetalle;

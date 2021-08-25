@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="10dp"
+    >
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_centerHorizontal="true">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView1"
+            android:layout_width="140dp"
+            android:layout_height="150dp"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/imagen_comida"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                >
+            </ImageView>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="170dp"
+            android:layout_height="120dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@id/cardView1"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:id="@+id/nombreComidaTextCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:text="Nombre comida demasiado largo para que entre"
+                    android:fontFamily="@font/montserrat_light"
+                    android:textColor="#5a2b53"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:layout_marginTop="25dp"
+
+                    >
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/nombreComidaTextCard"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baseline_access_time_24">
+
+                    </ImageView>
+
+                    <TextView
+                        android:id="@+id/readyTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_thin"
+                        android:textSize="14sp"
+                        android:text="5"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#5a2b53"
+                        android:layout_gravity="center"
+
+
+                        >
+                    </TextView>
+
+                </LinearLayout>
+
+                <ToggleButton
+                    android:id="@+id/favourite_buttom"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:textOn=""
+                    android:textOff=""
+                    android:background="@drawable/favourite_icon_selector"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginBottom="10dp"
+
+                    >
+
+                </ToggleButton>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

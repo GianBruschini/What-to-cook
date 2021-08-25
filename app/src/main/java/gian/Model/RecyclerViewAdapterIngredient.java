@@ -32,13 +32,11 @@ public class RecyclerViewAdapterIngredient extends RecyclerView.Adapter<Recycler
     public static List<String> ingredientsList;
 
 
-
     public RecyclerViewAdapterIngredient(Context mContext, List<Ingredient> mData) {
         this.mContext = mContext;
         this.mData = mData;
         ingredientsList = new ArrayList<>();
     }
-
 
 
     @NonNull
